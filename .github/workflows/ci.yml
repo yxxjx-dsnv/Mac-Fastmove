@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Bootstrap project
+        run: ./scripts/bootstrap.sh
+      - name: Build
+        run: |
+          xcodebuild \
+            -project "Mac Fastmove.xcodeproj" \
+            -scheme LayerKeys \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+      - name: Test
+        run: |
+          xcodebuild \
+            -project "Mac Fastmove.xcodeproj" \
+            -scheme LayerKeys \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            test

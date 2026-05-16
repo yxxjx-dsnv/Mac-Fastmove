@@ -1,0 +1,57 @@
+name: Mac Fastmove
+configs:
+  Debug: debug
+  Release: release
+options:
+  bundleIdPrefix: io.github.macfastmove
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    exactVersion: 2.9.1
+targets:
+  LayerKeys:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: LayerKeys/Sources
+    resources:
+      - path: LayerKeys/Resources
+    settings:
+      base:
+        PRODUCT_NAME: Mac Fastmove
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.macfastmove.app
+        INFOPLIST_FILE: LayerKeys/Sources/Support/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SWIFT_VERSION: 6.0
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 0.1.0
+        LD_RUNPATH_SEARCH_PATHS:
+          - $(inherited)
+          - "@executable_path/../Frameworks"
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+      configs:
+        Debug:
+          CODE_SIGNING_ALLOWED: NO
+          ENABLE_HARDENED_RUNTIME: NO
+        Release:
+          CODE_SIGNING_ALLOWED: NO
+          ENABLE_HARDENED_RUNTIME: YES
+    dependencies:
+      - package: Sparkle
+        product: Sparkle
+
+  LayerKeysTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: LayerKeys/Tests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+    dependencies:
+      - target: LayerKeys
