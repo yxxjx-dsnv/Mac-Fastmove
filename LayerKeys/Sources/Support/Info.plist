@@ -26,8 +26,6 @@
   <string>13.0</string>
   <key>LSUIElement</key>
   <true/>
-  <key>MacFastmovePurchaseURL</key>
-  <string>https://gumroad.com/l/macfastmove</string>
   <key>MacFastmoveRepositoryURL</key>
   <string>https://github.com/example/mac-fastmove</string>
   <key>SUAllowsAutomaticUpdates</key>

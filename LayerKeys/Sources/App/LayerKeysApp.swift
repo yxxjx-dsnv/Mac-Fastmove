@@ -2,7 +2,12 @@ import SwiftUI
 
 @main
 struct LayerKeysApp: App {
-    @StateObject private var model = AppModel()
+    @StateObject private var model: AppModel
+
+    init() {
+        let isRunningTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        _model = StateObject(wrappedValue: AppModel(skipRuntimeStateBootstrap: isRunningTests))
+    }
 
     var body: some Scene {
         MenuBarExtra(AppConfig.appName, systemImage: model.menuBarSymbolName) {

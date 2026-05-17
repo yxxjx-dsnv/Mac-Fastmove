@@ -33,23 +33,10 @@ struct PresetsPane: View {
                     .foregroundStyle(.secondary)
             }
 
-            Section("Preferred Keyboards") {
-                if model.keyboards.isEmpty {
-                    Text("No keyboards detected.")
-                        .foregroundStyle(.secondary)
-                } else {
-                    ForEach(model.keyboards) { keyboard in
-                        Toggle(
-                            keyboard.shortDescription,
-                            isOn: Binding(
-                                get: { model.settings.selectedKeyboardIDs.contains(keyboard.id) },
-                                set: { _ in model.toggleKeyboardSelection(keyboard.id) }
-                            )
-                        )
-                    }
-                }
-
-                Text("Current beta note: selected devices are discovered and persisted, but the CGEventTap remapping pipeline still applies globally.")
+            Section("Scope") {
+                Text("Caps Navigation currently applies system-wide to keep the v1 experience predictable and fast.")
+                    .foregroundStyle(.secondary)
+                Text("Connected keyboards are still shown in Diagnostics for troubleshooting, but per-device routing is not part of this release.")
                     .font(.callout)
                     .foregroundStyle(.secondary)
             }

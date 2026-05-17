@@ -34,7 +34,6 @@
 		CA116CB810414CD71399EA99 /* LicenseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FBE8F6C46B8AB029CBAFA /* LicenseState.swift */; };
 		CE4F3552A491D3C4EA375A62 /* LicenseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4357D00B86822E4664F1F13 /* LicenseServiceTests.swift */; };
 		D46FC441C0A5D12E870FD042 /* CapsNavigationEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A22D5027802E0A962025C /* CapsNavigationEngineTests.swift */; };
-		E2EEC87979D93DF79E4C54CA /* LicensingPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F827623C1F52FEE4E210A8 /* LicensingPane.swift */; };
 		E68F8D36E06886B0B7D2D373 /* InputTestPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6879FBDAA24F5B88B75AE1 /* InputTestPane.swift */; };
 		EFC25CCF6041FD7919BAAEC6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71751DF80E524F99A61A1E /* AppConfig.swift */; };
 		F02F9CEC1D794935F73B414C /* RootDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0F8877C599A0A96806C71 /* RootDashboardView.swift */; };
@@ -65,7 +64,6 @@
 		463A22D5027802E0A962025C /* CapsNavigationEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsNavigationEngineTests.swift; sourceTree = "<group>"; };
 		6B332D1C50CDFFD70644ECB5 /* LicenseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseService.swift; sourceTree = "<group>"; };
 		6DF6827E36D4B2E8B5A5BD05 /* PermissionsPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPane.swift; sourceTree = "<group>"; };
-		71F827623C1F52FEE4E210A8 /* LicensingPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensingPane.swift; sourceTree = "<group>"; };
 		7420671B75409D3163B6309C /* PermissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionState.swift; sourceTree = "<group>"; };
 		7E76A609B459FF7C5BA200B3 /* LayerKeysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerKeysApp.swift; sourceTree = "<group>"; };
 		87465D088504AABC095AE124 /* LayerKeysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LayerKeysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				2B6879FBDAA24F5B88B75AE1 /* InputTestPane.swift */,
-				71F827623C1F52FEE4E210A8 /* LicensingPane.swift */,
 				2CA84545D91667D65EF8CF5C /* OverviewPane.swift */,
 				6DF6827E36D4B2E8B5A5BD05 /* PermissionsPane.swift */,
 				DF4B581488D73C0E62F79830 /* PresetsPane.swift */,
@@ -301,7 +298,6 @@
 				BE6954DA9A4CF4A50010968C /* LayerKeysApp.swift in Sources */,
 				3C5F2BC8C527641989188F7C /* LicenseService.swift in Sources */,
 				CA116CB810414CD71399EA99 /* LicenseState.swift in Sources */,
-				E2EEC87979D93DF79E4C54CA /* LicensingPane.swift in Sources */,
 				B485EA20730034C9862695D9 /* OverviewPane.swift in Sources */,
 				A25D4FC6BE28CC9062A01478 /* PermissionService.swift in Sources */,
 				7CF2C1042E6214B36B92E99D /* PermissionState.swift in Sources */,
@@ -352,7 +348,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.macfastmove.LayerKeysTests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LayerKeys.app/Contents/MacOS/LayerKeys";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Fastmove.app/Contents/MacOS/Mac Fastmove";
 			};
 			name = Release;
 		};
@@ -375,6 +371,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.macfastmove.app;
+				PRODUCT_MODULE_NAME = LayerKeys;
 				PRODUCT_NAME = "Mac Fastmove";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 6.0;
@@ -400,6 +397,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.macfastmove.app;
+				PRODUCT_MODULE_NAME = LayerKeys;
 				PRODUCT_NAME = "Mac Fastmove";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 6.0;
@@ -538,7 +536,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.macfastmove.LayerKeysTests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LayerKeys.app/Contents/MacOS/LayerKeys";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Fastmove.app/Contents/MacOS/Mac Fastmove";
 			};
 			name = Debug;
 		};

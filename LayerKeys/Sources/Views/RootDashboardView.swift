@@ -4,7 +4,6 @@ private enum DashboardSection: String, CaseIterable, Identifiable {
     case overview
     case permissions
     case presets
-    case licensing
     case updates
     case diagnostics
 
@@ -15,7 +14,6 @@ private enum DashboardSection: String, CaseIterable, Identifiable {
         case .overview: return "Overview"
         case .permissions: return "Permissions"
         case .presets: return "Presets"
-        case .licensing: return "Licensing"
         case .updates: return "Updates"
         case .diagnostics: return "Diagnostics"
         }
@@ -26,7 +24,6 @@ private enum DashboardSection: String, CaseIterable, Identifiable {
         case .overview: return "sparkles"
         case .permissions: return "hand.raised"
         case .presets: return "keyboard"
-        case .licensing: return "ticket"
         case .updates: return "arrow.triangle.2.circlepath"
         case .diagnostics: return "waveform.path.ecg"
         }
@@ -52,8 +49,6 @@ struct RootDashboardView: View {
                 PermissionsPane()
             case .presets:
                 PresetsPane()
-            case .licensing:
-                LicensingPane()
             case .updates:
                 UpdatesPane()
             case .diagnostics:

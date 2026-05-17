@@ -8,6 +8,15 @@ packages:
   Sparkle:
     url: https://github.com/sparkle-project/Sparkle
     exactVersion: 2.9.1
+schemes:
+  LayerKeys:
+    build:
+      targets:
+        LayerKeys: all
+        LayerKeysTests: [test]
+    test:
+      targets:
+        - name: LayerKeysTests
 targets:
   LayerKeys:
     type: application
@@ -20,6 +29,7 @@ targets:
     settings:
       base:
         PRODUCT_NAME: Mac Fastmove
+        PRODUCT_MODULE_NAME: LayerKeys
         PRODUCT_BUNDLE_IDENTIFIER: io.github.macfastmove.app
         INFOPLIST_FILE: LayerKeys/Sources/Support/Info.plist
         GENERATE_INFOPLIST_FILE: NO
@@ -53,5 +63,7 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
         CODE_SIGNING_ALLOWED: NO
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Mac Fastmove.app/Contents/MacOS/Mac Fastmove"
+        BUNDLE_LOADER: "$(TEST_HOST)"
     dependencies:
       - target: LayerKeys

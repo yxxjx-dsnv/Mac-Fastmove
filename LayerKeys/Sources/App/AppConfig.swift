@@ -7,10 +7,6 @@ enum AppConfig {
     static let defaultDoubleTapInterval = 0.28
     static let syntheticEventUserData = 0x4C41594552 // "LAYER"
 
-    static var purchaseURL: URL {
-        url(forInfoKey: "MacFastmovePurchaseURL") ?? URL(string: "https://gumroad.com/l/macfastmove")!
-    }
-
     static var repositoryURL: URL {
         url(forInfoKey: "MacFastmoveRepositoryURL") ?? URL(string: "https://github.com/example/mac-fastmove")!
     }

@@ -9,13 +9,13 @@ struct OverviewPane: View {
                 Text(AppConfig.appName)
                     .font(.largeTitle.bold())
 
-                Text("A compact keyboard power-user utility for direct distribution on macOS.")
+                Text("A focused menu bar utility that turns Caps Lock into a fast navigation layer on macOS.")
                     .foregroundStyle(.secondary)
 
                 GroupBox("Current Status") {
                     VStack(alignment: .leading, spacing: 12) {
                         statusRow("Engine", value: engineLabel)
-                        statusRow("Trial / License", value: model.trialDescription)
+                        statusRow("Preset", value: model.presetStatusDescription)
                         statusRow("Permissions", value: permissionsLabel)
                         statusRow("Connected Keyboards", value: "\(model.keyboards.count)")
                     }
@@ -30,10 +30,10 @@ struct OverviewPane: View {
                     }
                 }
 
-                GroupBox("Beta Notes") {
+                GroupBox("How v1 Works") {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("This build uses a global CGEventTap pipeline.")
-                        Text("Per-device keyboard selection is discovered and stored, but true per-device routing will require a lower-level engine than CGEventTap.")
+                        Text("Caps Navigation applies system-wide through a CGEventTap event pipeline.")
+                        Text("This first public version focuses on one polished preset instead of per-device routing or a large remapping toolbox.")
                     }
                     .font(.callout)
                     .foregroundStyle(.secondary)
@@ -52,8 +52,6 @@ struct OverviewPane: View {
             return "Disabled"
         case .blockedByPermissions:
             return "Blocked by permissions"
-        case .blockedByTrial:
-            return "Blocked by expired trial"
         }
     }
 
